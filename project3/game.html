@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Star Chaser</title>
+		<link rel="stylesheet" href="css/game.css">
+		<link rel="icon" href="media/spaceship-recolored.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<main>
+			<section class="game">
+				<h1>STAR CHASER</h1>
+				<!-- External libraries -->
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.13.2/pixi.min.js"></script>
+
+				<!-- My JS files -->
+				<script src="js/classes.js"></script>
+				<script src="js/cb-main.js"></script>
+				<script src="js/utilities.js"></script>
+			</section>
+			<section class="controls-container">
+				<h2>CONTROLS</h2>
+				<div class="controls">
+					<div class="fire">
+						<div class="empty-key">
+
+						</div>
+						<div class="key">
+							W
+						</div>
+						<div class = "empty-key">
+
+						</div>
+						<div class="key">
+							A
+						</div>
+						<div class="fire-key">
+							FIRE
+						</div>
+						<div class="key">
+							D
+						</div>
+					</div>
+					<div class="move">
+						<div class="lmb">
+
+						</div>
+						<div class="rmb">
+
+						</div>
+						<div class="mouse">
+							MOVE
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="hazards">
+				<h2>HAzARDS</h2>
+				<div class="hazard">
+					<div class="description">
+						<h3>FLOATERS</h3>
+						<p>Simple ships that drift through a fixed area of space and will change their direction of velocity instantaneously once they reach the edge.</p>
+					</div>
+					<img src="media/floater-hazard.png" alt="Floater Hazard">
+				</div>
+				<div class="hazard">
+					<div class="description">
+						<h3>SPINNERS</h3>
+						<p>Advanced ships that can spin fast enough to create a wormhole and teleport themselves through space, typically disappearing in one direction to appear in the opposite.</p>
+					</div>
+					<img src="media/spinner-hazard.png" alt="Spinner Hazard">
+				</div>
+				<div class="hazard">
+					<div class="description">
+						<h3>SEEKERS</h3>
+						<p>Hostile ships that will constantly advance towards you.</p>
+						<p>Because these ships are designed for pursuit, they can easily dodge asteroids.</p>
+					</div>
+					<img src="media/seeker-hazard.png" alt="Seeker Hazard">
+				</div>
+				<div class="hazard">
+					<div class="description">
+						<h3>ASTEROIDS</h3>
+						<p>Large rocks that are unbreakable for your equipment.</p>
+						<p>Their sheer mass is capable of obliterating most ships that come into their path.</p>
+					</div>
+					<img src="media/asteroid-hazard.png" alt="Asteroid Hazard">
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="footer-categories">
+				<div class="footer-category">
+					<h4>Work</h4>
+					<nav>
+						<ul class="footer-links">
+							<li><a href="../index.html">Web Design</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="footer-category">
+					<h4>Star Chaser</h4>
+					<nav>
+						<ul class="footer-links">
+							<li><a href="index.html">Project Outline</a></li>
+							<li><a href="doc.html">Documentation</a></li>
+							<li><a href="game.html">Game</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<p>&copy; 2026 Ayele Moore</p>
+		</footer>
+	</body>
+</html>
