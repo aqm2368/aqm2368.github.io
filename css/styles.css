@@ -1,0 +1,9 @@
+canvas {
+    display: block;
+    overflow: clip;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+}
