@@ -4,7 +4,7 @@ let exampleImage;
 function preload() {
     exampleShader = loadShader(
         'assets/example.vert',
-        'assets/example.frag'
+        'assets/fragmentPractice.frag'
     );
 
     exampleImage = loadImage('example_noise_glitch.png')
@@ -25,6 +25,7 @@ function draw() {
     exampleShader.setUniform("height", height);
     exampleShader.setUniform("width", width);
     exampleShader.setUniform("exampleImage", exampleImage);
+    exampleShader.setUniform("iResolution", [width, height, width / height])
 
     // background('#000000')
 
