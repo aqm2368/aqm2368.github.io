@@ -19,18 +19,25 @@ void main() {
 
     vec3 finalColor = vec3(0.0);
 
-    for(float i = 0.0; i < 3.0; i++) {
-        uv = fract(uv * (2.1 + 0.5 * i)) - 0.5;
+    for(float i = 0.0; i < 4.0; i++) {
+        uv = fract(uv * (3.0 + 0.5 * i)) - 0.5;
 
-        float d = length(uv) * exp(-length(uv0));
-        vec3 color = palatte(length(uv0) + i*0.1+ millis/1000.0 * 0.2);
+        float d = length(uv) * exp(-length(uv0 * 1.7));
+        vec3 color = palatte(length(uv0) + i*0.1+ millis * 0.2);
 
-        d = sin(d * 8.0 + millis/1000.0);
+        d = sin(d * 10.0 + millis) * 1.5;
         d = abs(d);
-        d = pow(0.1 / d, 1.75);
+        d = pow((.1 / length(uv0)) * (0.1 / d), 1.75);
 
         finalColor += color * d;
     }
 
-    gl_FragColor = vec4(finalColor, 1.0);
+    // vec3 finalColor = vec3(0, 0, 0);
+
+    // float d = (sin(length(uv)*80.0 + millis/1000.0));
+    // d = step(0.99, d);
+    // d = (d - 1.0) * -1.0;
+    // finalColor = vec3(d, d, d);
+
+    gl_FragColor = vec4(finalColor, 1);
 }

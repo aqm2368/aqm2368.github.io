@@ -21,7 +21,7 @@ function setup() {
 
 function draw() {
     clear();
-    exampleShader.setUniform("millis", millis());
+    exampleShader.setUniform("millis", (millis() / 1000.0) % 102935);
     exampleShader.setUniform("height", height);
     exampleShader.setUniform("width", width);
     exampleShader.setUniform("exampleImage", exampleImage);
