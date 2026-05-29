@@ -1,13 +1,15 @@
 let exampleShader;
-let exampleImage;
+let globeMap;
 
 function preload() {
     exampleShader = loadShader(
         'assets/example.vert',
-        'assets/fragmentPractice.frag'
+        'assets/globe.frag'
     );
 
-    exampleImage = loadImage('example_noise_glitch.png')
+    globeMap = loadImage(
+        'assets/globe-noise.png'
+    );
 }
 
 function setup() {
@@ -21,12 +23,12 @@ function setup() {
 
 function draw() {
     clear();
-    exampleShader.setUniform("millis", (millis() / 1000.0) % 102935);
+    exampleShader.setUniform("millis", millis());
     exampleShader.setUniform("height", height);
     exampleShader.setUniform("width", width);
-    exampleShader.setUniform("exampleImage", exampleImage);
     exampleShader.setUniform("iResolution", [width, height, width / height]);
-
+    exampleShader.setUniform("maxWidth", window.outerWidth);
+    exampleShader.setUniform("globeNoise", globeMap);
     // background('#000000')
 
     fill('#000000');
