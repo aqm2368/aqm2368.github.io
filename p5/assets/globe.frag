@@ -55,7 +55,8 @@ void main() {
     float v = asin(xyz.y) / PI + 0.5;
 
     vec2 p = vec2(u, v);
-    p.x = fract(2.0 * p.x);
+    p.xy = 1.0 - p.xy;
+    // p.x = fract(2.0 * p.x);
 
     vec4 color = texture2D(globeNoise, p);
 
