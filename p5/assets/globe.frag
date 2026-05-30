@@ -52,7 +52,7 @@ void main() {
     // Oscillate the horizontal position of this pixel displaced by time so that it appears to be rotating around an axis
 
     float u = atan(xyz.z, xyz.x) / (2.0 * PI) + 0.5;
-    float v = asin(xyz.y) / PI + 0.5;
+    float v = xyz.y * 0.5 + 0.5;//asin(xyz.y) / PI + 0.5;
 
     vec2 p = vec2(u, v);
     p.xy = 1.0 - p.xy;
@@ -62,7 +62,7 @@ void main() {
 
     // color.x += step(0.1, p.x);
     
-    // gl_FragColor = vec4(sphere * xyz.xyz, 1.0);
+    // gl_FragColor = vec4(vec3(sphere * xyz.x), 1.0);
     gl_FragColor = vec4(vec3(sphere * palatte(color.x)), 1.0);
     // gl_FragColor = color;
 }
