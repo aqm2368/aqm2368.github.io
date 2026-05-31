@@ -4,7 +4,7 @@ let exampleImage;
 function preload() {
     exampleShader = loadShader(
         'assets/example.vert',
-        'assets/example.frag'
+        'assets/fragmentPractice.frag'
     );
 
     exampleImage = loadImage('example_noise_glitch.png')
