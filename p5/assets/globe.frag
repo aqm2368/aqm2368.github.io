@@ -39,7 +39,7 @@ void main() {
     vec3 xyz0 = xyz;
   
     // Create a 2D rotational matrix that rotates the grid counter-clockwise by 'angle' in radians
-    float angle = -0.1;
+    float angle = -0.15;
     mat2 axisTilt = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
 
     angle += millis/1000.0;
@@ -61,8 +61,14 @@ void main() {
     vec4 color = texture2D(globeNoise, p);
 
     // color.x += step(0.1, p.x);
+
+    vec3 normals = xyz0;
+    angle *= -0.3;
+    mat3 normalsRotation = mat3(cos(angle), 0.0, sin(angle), 0.0, 1.0, 0.0, -sin(angle), 0.0, cos(angle));
+    normals *= normalsRotation;
     
+    gl_FragColor = vec4(vec3((sphere * palatte(color.x)) + (normals.z * 1.2 - 0.7)), 1.0);
     // gl_FragColor = vec4(vec3(sphere * xyz.x), 1.0);
-    gl_FragColor = vec4(vec3(sphere * palatte(color.x)), 1.0);
+    // gl_FragColor = vec4(sphere * xyz, 1.0);
     // gl_FragColor = color;
 }
