@@ -27,7 +27,7 @@ function draw() {
     exampleShader.setUniform("exampleImage", exampleImage);
     exampleShader.setUniform("iResolution", [width, height, width / height]);
 
-    // background('#000000')
+    background('#000000');
 
     fill('#000000');
     rect(0, 0, width, height);

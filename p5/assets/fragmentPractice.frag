@@ -28,6 +28,7 @@ void main() {
         d = sin(d * 10.0 + millis) * 1.5;
         d = abs(d);
         d = pow((.1 / length(uv0)) * (0.1 / d), 1.75);
+        //color = mod(color, 1.0);
 
         finalColor += color * d;
     }
@@ -39,5 +40,8 @@ void main() {
     // d = (d - 1.0) * -1.0;
     // finalColor = vec3(d, d, d);
 
-    gl_FragColor = vec4(finalColor, 1);
+    gl_FragColor = vec4(finalColor, 1.0);//(vec3(1.23 - length(uv0))), 1);
+    // finalColor.xyz = step(100.0, finalColor.xyz);
+    // gl_FragColor = vec4(vec3(sign(finalColor) ), 1.0);
+    // gl_FragColor = vec4(vec3(1.23 -length(uv0)), 1.0);
 }

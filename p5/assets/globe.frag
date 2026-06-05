@@ -66,8 +66,10 @@ void main() {
     angle *= -0.3;
     mat3 normalsRotation = mat3(cos(angle), 0.0, sin(angle), 0.0, 1.0, 0.0, -sin(angle), 0.0, cos(angle));
     normals *= normalsRotation;
+    //normals.z = 0.7 / 1.2;
+    // normals.z -= step(0.0, -normals.z);
     
-    gl_FragColor = vec4(vec3((sphere * palatte(color.x)) + (normals.z * 1.2 - 0.7)), 1.0);
+    gl_FragColor = vec4(vec3((sphere * palatte(color.x)) + ((normals.z) * 1.2 - 0.7)), 1.0);
     // gl_FragColor = vec4(vec3(sphere * xyz.x), 1.0);
     // gl_FragColor = vec4(sphere * xyz, 1.0);
     // gl_FragColor = color;
