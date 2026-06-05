@@ -13,6 +13,6 @@ void main() {
 
     vec3 color = vec3(0.0, 0.93, 1.0);
 
-    float bToD = 2.5;
-    gl_FragColor = vec4(color * vec3(1.0 - (darken * isSide + 0.5 + (-vDepth - (710.0 - startDepth)) / (size / bToD))), 1.0);
+    float bToD = 3.0;
+    gl_FragColor = vec4(color * vec3(1.0 - (darken * isSide + 1.0 + (-vDepth - (710.0 - startDepth)) / (size / bToD))), 1.0);
 }
